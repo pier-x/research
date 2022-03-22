@@ -63,7 +63,7 @@ const data = {
         }
       },
       {
-        title: "Social Welfare",
+        title: "Pension",
         subtitle: "Old-age income support schemes",
         layers: {
           data: [
