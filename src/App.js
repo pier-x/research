@@ -8,12 +8,16 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import styles from './css/styles.scss';
 import './css/styles.scss';
+import { VoicemailOutlined } from '@mui/icons-material';
 
 const layersDef = {
   research: "Research Collaboration",
   network: "Network & Policy Engagement",
   policy: "Policy Advocacy",
 }
+const numLayers = Object.keys(layersDef).length
+const minViolinWidth = 2
+const maxViolinNum = 10
 
 const orgValues = {
   intl: 3,
@@ -462,13 +466,26 @@ function Canvas({ cluster, value, index, setValue }) {
                 layers[layer].push(curItem)
               })
             })
+            const violinWidths = Object.keys(layersDef).map(key => layers[key].length).reverse().map(x => (Math.min(x, maxViolinNum)*(100 - minViolinWidth)/(100/maxViolinNum) + minViolinWidth))
+            let pathDef = "M 0 0 "
+            pathDef += `h ${violinWidths[0]} `
+            pathDef += `v 50 `
+            for (let i = 1; i < violinWidths.length; i++) {
+              pathDef += `C ${violinWidths[i-1]} ${100*i}, ${violinWidths[i]} ${100*i}, ${violinWidths[i]} ${100*i + 50} `
+            }
+            pathDef += `v 50 `
+            pathDef += `H 0 `
+            pathDef += `z`
             return(
               <div className="project" key={i}>
-                {/* <div className="violin-container" style={{gridArea: `1 / ${i+2} / span 3 / span 1`}}>
-                  <svg className="violin" viewBox="0 0 100 100">
-                    <path d="M 0, 0 h 100 v 100 z" fill="red" />
+                <div className="violin-container" style={{gridArea: `1 / ${i+2} / span ${numLayers} / span 1`}}>
+                  <svg className="violin" viewBox={`0 0 100 ${100*numLayers}`}>
+                    <path d={pathDef} />
                   </svg>
-                </div> */}
+                  <svg className="violin violin-flip" viewBox={`0 0 100 ${100*numLayers}`}>
+                    <path d={pathDef} />
+                  </svg>
+                </div>
                 <LayerSet layers={layers} col={i+2} />
                 <div className="cell center project-name cluster" onClick={() => setValue(i+1)}>
                   <div className="title">{data[cluster].label}</div>
