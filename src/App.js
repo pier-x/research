@@ -438,7 +438,7 @@ function Canvas({ cluster, value, index, setValue }) {
 
         {/* Heading */}
         {layerKeys.map((layer, i) => 
-          <div className="layer-heading" key={i} style={{gridRow: `${i} / span 1`, gridColumn: "1 / span 1"}}>{layersDef[layer]}</div>
+          <div className="layer-heading" key={i} style={{gridRow: `${i+1} / span 1`, gridColumn: "1 / span 1"}}>{layersDef[layer]}</div>
         )}
         <div />
 
