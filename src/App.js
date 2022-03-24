@@ -496,7 +496,7 @@ function Canvas({ cluster, value, index, setValue }) {
 function Layer({ data, lineType, row, col }) {
   return(
     <div className="cell" style={{gridRow: `${row+1} / span 1`, gridColumn: `${col} / span 1`}}>
-      <div className={`line line-${lineType}`} />
+      <div className={`line line-${lineType === "all" ? "all" : "none"}`} />
       {data && data.length > 0 &&
         <div className="layer-container">
           {data.sort((a, b) => orgValues[b.type] - orgValues[a.type]).map((item, i) => 
@@ -509,6 +509,7 @@ function Layer({ data, lineType, row, col }) {
           )}
         </div>
       }
+      <div className={`line line-${lineType}`} />
     </div>
   )
 }
