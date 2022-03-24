@@ -95,7 +95,7 @@ a {
   position: absolute;
   left: 50%;
   height: 100%;
-  fill: rgba(black, 0.2);
+  fill: rgba($primary-color, 0.15);
   transform-origin: center left;
   transform: scaleX(0.5);
 }

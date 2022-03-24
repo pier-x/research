@@ -470,8 +470,9 @@ function Canvas({ cluster, value, index, setValue }) {
             let pathDef = "M 0 0 "
             pathDef += `h ${violinWidths[0]} `
             pathDef += `v 50 `
+            const x = 50
             for (let i = 1; i < violinWidths.length; i++) {
-              pathDef += `C ${violinWidths[i-1]} ${100*i}, ${violinWidths[i]} ${100*i}, ${violinWidths[i]} ${100*i + 50} `
+              pathDef += `C ${violinWidths[i-1]} ${100*i-50+x}, ${violinWidths[i]} ${100*i+50-x}, ${violinWidths[i]} ${100*i + 50} `
             }
             pathDef += `v 50 `
             pathDef += `H 0 `
