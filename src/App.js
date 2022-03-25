@@ -108,6 +108,7 @@ const data = {
           ],
           network: [
             {org: "ประกันสังคม", type: "thai"},
+            {org: "สกสว.", type: "thai"},
             {org: "ฝขอ.", type: "bot"},
             {org: "สนง.", type: "bot"},
           ],
@@ -170,9 +171,6 @@ const data = {
             {name: "ทศพล", org: "ฝนง.", type: "bot"},
             {name: "ธนพร", org: "ฝคศ.", type: "bot"},
           ],
-          network: [
-            {org: "กขค.", type: "thai"},
-          ],
         },
       },
       {
@@ -215,7 +213,7 @@ const data = {
             {name: "บดินทร์", org: "ฝขอ.", type: "bot"},
             {name: "วุฒิชัย", org: "ฝขอ.", type: "bot"},
             {name: "สิกขวิชญ์", org: "ฝถร.", type: "bot"},
-            {name: "Sukitta", org: "ฝถร.", type: "bot"},
+            {name: "สุกฤตา", org: "ฝถร.", type: "bot"},
           ],
           network: [
             {org: "NCB", type: "thai"},
@@ -232,12 +230,12 @@ const data = {
         title: "Inclusive Finance",
         layers: {
           research: [
-            {name: "Chayanee", org: "TU", type: "thai"},
-            {name: "Narapong", org: "CU", type: "thai"},
+            {name: "ชญานี", org: "TU", type: "thai"},
+            {name: "นราพงศ์", org: "CU", type: "thai"},
             {org: "DPA", type: "thai"},
           ],
           network: [
-            {org: "สนภ?", type: "bot"},
+            {org: "สนภ.", type: "bot"},
             {org: "กยอ.", type: "bot"},
           ],
         }
@@ -254,10 +252,10 @@ const data = {
         title: "Farmer's Debt Solution",
         layers: {
           research: [
-            {name: "Chayanee", org: "TU", type: "thai"},
-            {name: "Kanittha", org: "CU", type: "thai"},
-            {name: "Phumsith", org: "KU", type: "thai"},
-            {name: "Sopin", org: "PSU", type: "thai"},
+            {name: "ชญานี", org: "TU", type: "thai"},
+            {name: "ขนิษฐา", org: "CU", type: "thai"},
+            {name: "ภูมิสิทธิ์", org: "KU", type: "thai"},
+            {name: "โสภิณ", org: "PSU", type: "thai"},
           ],
           network: [
             {org: "ธกส.", type: "thai"},
@@ -266,7 +264,7 @@ const data = {
             {org: "ฝคง.", type: "bot"},
             {org: "ฝสร.", type: "bot"},
             {org: "ฝคศ.", type: "bot"},
-            {org: "สนภ?", type: "bot"},
+            {org: "สนภ.", type: "bot"},
           ],
         },
       },
@@ -290,33 +288,43 @@ const data = {
         title: "Climate Change Synthesis",
         layers: {
           research: [
-            {org: "ฝคศ.", type: "bot"},
+            {name: "ปัญจพัฒน์", org: "ฝคศ.", type: "bot"},
+            {name: "ธิติ", org: "ฝคศ.", type: "bot"},
           ],
-          network: [],
-          policy: [],
         }
       },
       {
-        title: "Macroeconomic Effects",
+        title: "Macroeconomic Effects of Climate Change",
         layers: {
           research: [
             {name: "พิม", org: "ฝนง.", type: "bot"},
           ],
-          network: [
-            {org: "BIS", type: "intl"},
-          ],
-          policy: [],
         },
       },
       {
-        title: "Microeconomic Effects",
+        title: "Microeconomic Effects of Climate Change",
         layers: {
           research: [
             {name: "จิรสรณ์", org: "RU", type: "thai"},
             {name: "อัศมน", org: "DEQP", type: "thai"},
           ],
-          network: [],
-          policy: [],
+        },
+      },
+      {
+        title: "Digital",
+        layers: {
+          research: [
+            {name: "คณิสร์", org: "CU", type: "thai"},
+            {org: "ฝนง.", type: "bot"},
+            {org: "ฝตง.", type: "bot"},
+          ],
+          network: [
+            {org: "กยอ.", type: "bot"},
+            {org: "ฝนง.", type: "bot"},
+            {org: "ฝตง.", type: "bot"},
+            {org: "DA Taskforce", type: "bot"},
+            {org: "Financial Landscape Squad", type: "bot"},
+          ],
         },
       },
       // {
@@ -411,7 +419,11 @@ function Canvas({ cluster, value, index, setValue }) {
         {layerKeys.map((layer, i) => 
           <div className="layer-heading" key={i} style={{gridRow: `${i+1} / span 1`, gridColumn: "1 / span 1"}}>{layersDef[layer]}</div>
         )}
-        <div />
+        <div className="layer-heading legend-container" style={{gridRow: `${numLayers+1} / span 1`, gridColumn: "1 / span 1"}}>
+          <div className="legend item item-intl">องค์กรต่างประเทศ</div>
+          <div className="legend item item-thai">องค์กรในประเทศ</div>
+          <div className="legend item item-bot">ฝ่ายงานใน ธปท.</div>
+        </div>
 
         {cluster !== "overall"
         ? data[cluster].projects.map((project, i) => {
@@ -419,7 +431,7 @@ function Canvas({ cluster, value, index, setValue }) {
             return(
               <div className="project" key={i}>
                 <LayerSet layers={layers} col={i+2} />
-                <div className="cell center project-name">
+                <div className="cell center project-name" style={{gridRow: `${numLayers+1} / span 1`, gridColumn: `${i+2} / span 1`}}>
                   <div className="title">{title}</div>
                   {subtitle && <div className="subtitle">{subtitle}</div>}
                 </div>
@@ -459,7 +471,7 @@ function Canvas({ cluster, value, index, setValue }) {
                   </svg>
                 </div>
                 <LayerSet layers={layers} col={i+2} />
-                <div className="cell center project-name cluster" onClick={() => setValue(i+1)}>
+                <div className="cell center project-name cluster" onClick={() => setValue(i+1)} style={{gridRow: `${numLayers+1} / span 1`, gridColumn: `${i+2} / span 1`}}>
                   <div className="title">{data[cluster].label}</div>
                 </div>
               </div>

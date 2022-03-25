@@ -70,7 +70,7 @@ a {
   margin: 0 auto;
   display: grid;
   grid-template-rows: repeat(3, 1fr) auto;
-  grid-template-columns: 150px repeat(auto-fit, $cell-width + 2*$cell-padding);
+  grid-template-columns: 180px repeat(auto-fit, $cell-width + 2*$cell-padding);
   // gap: 0 40px;
   grid-auto-flow: column;
   > div {
@@ -125,10 +125,16 @@ a {
 }
 
 .layer-heading {
-  width: 150px;
-  font-size: 1.5rem;
+  width: 180px;
+  font-size: 1.8rem;
   line-height: 1.1;
   font-weight: bold;
+}
+
+.legend-container {
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-align: center;
 }
 
 .layer-container {
@@ -182,7 +188,7 @@ a {
 
 .title {
   margin-top: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 1.1;
   font-weight: bold;
 }
