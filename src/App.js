@@ -8,7 +8,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import styles from './css/styles.scss';
 import './css/styles.scss';
-import { VoicemailOutlined } from '@mui/icons-material';
 
 const layersDef = {
   research: "Research Collaboration",
@@ -26,25 +25,20 @@ const orgValues = {
 }
 
 const data = {
-  monetary: {
-    label: "Money, Macro, and Finance",
+  macro: {
+    label: "Macroeconomy",
     projects: [
       {
         title: "Inflation Dynamics",
         layers: {
-          // data: [
-          //   {name: "Online supermarket prices", type: "none"},
-          //   {name: "Online good prices from Priceza", type: "none"},
-          // ],
           research: [
-            {name: "พิม", org: "สนง.", type: "bot"},
-            {name: "ทศพล", org: "สนง.", type: "bot"},
+            {name: "พิม", org: "ฝนง.", type: "bot"},
+            {name: "ทศพล", org: "ฝนง.", type: "bot"},
             {name: "วีริศ", org: "ฝตง.", type: "bot"},
           ],
           network: [],
           policy: [
             {org: "กนง.", type: "bot"},
-            {org: "สนง.", type: "bot"},
           ],
         },
       },
@@ -53,40 +47,31 @@ const data = {
         layers: {
           policy: [
             {org: "กนง.", type: "bot"},
-            {org: "สนง.", type: "bot"},
           ]
         }
       },
       {
         title: "Exchange Rate and Financial Markets",
         layers: {
-          data: [
-            {name: "Transaction-level customs data", type: "none"},
-          ],
           research: [
-            {name: "พิม", org: "สนง.", type: "bot"},
-            {name: "เจตวัฒน์", org: "ฝบง.", type: "bot"},
+            {name: "พิม", org: "ฝนง.", type: "bot"},
+            {name: "เจตวัฒน์", org: "ฝนง.", type: "bot"},
           ],
           policy: [
             {org: "กนง.", type: "bot"},
-            {org: "สนง.", type: "bot"},
           ],
         }
       },
       {
         title: "Financial Stability",
         layers: {
-          // data: [
-          //   {name: "Debt securities holding database", type: "none"},
-          // ],
           research: [
             {name: "Tsomocos", org: "SAID", type: "intl"},
-            {name: "พงศ์พิชย์", org: "สนง.", type: "bot"},
-            {name: "วรินทิพย์", org: "สนง.", type: "bot"},
+            {name: "พงศ์พิชย์", org: "ฝนง.", type: "bot"},
+            {name: "วรินทิพย์", org: "ฝนง.", type: "bot"},
           ],
           policy: [
             {org: "กนง.", type: "bot"},
-            {org: "สนง.", type: "bot"},
           ],
         }
       },
@@ -117,18 +102,13 @@ const data = {
         title: "Labor Market",
         subtitle: "Landscape and trends",
         layers: {
-          // data: [
-          //   {name: "LFS", type: "none"},
-          //   {name: "Social security", type: "none"},
-          //   {name: "Job ads", type: "none"},
-          // ],
           research: [
             {name: "ศุภนิจ", org: "UCL", type: "intl"},
             {name: "เนื้อแพร", org: "UC3M", type: "intl"},
           ],
           network: [
             {org: "ประกันสังคม", type: "thai"},
-            {org: "DA", type: "bot"},
+            {org: "ฝขอ.", type: "bot"},
             {org: "สนง.", type: "bot"},
           ],
           policy: [],
@@ -147,17 +127,18 @@ const data = {
             {org: "World Bank", type: "intl"},
             {org: "สภาพัฒน์", type: "thai"},
             {org: "สศค.", type: "thai"},
-            {org: "DA", type: "bot"},
+            {org: "ฝขอ.", type: "bot"},
           ],
           policy: [
             {org: "อนุฯ เบี้ยยังชีพผู้สูงอายุ", type: "thai"},
-            {org: "เศรษฐศาสตร์เข้าท่า", type: "bot"},
+            {org: "คณะกรรมการกฤษฎีกา", type: "thai"},
+            {org: "Op-Ed", type: "bot"},
           ],
         },
       },
     ],
   },
-  firms: {
+  agribiz: {
     label: "Agriculture & Business Sectors",
     projects: [
       {
@@ -204,29 +185,28 @@ const data = {
             {name: "Apithai", org: "ฝขอ.", type: "bot"},
           ],
           network: [
-            {org: "กระทรวงเกษตรฯ", type: "thai"},
-            {org: "ธกส.", type: "thai"},
-            {org: "สมาคมประกันวินาศภัย", type: "thai"},
+            {org: "Munich Re", type: "intl"},
             {org: "GISTDA", type: "thai"},
             {org: "DEPA", type: "thai"},
+            {org: "ไทยคม", type: "thai"},
+            {org: "ARV", type: "thai"},
+            {org: "Infuse", type: "thai"},
           ],
           policy: [
             {org: "กระทรวงเกษตรฯ", type: "thai"},
             {org: "สมาคมประกันวินาศภัย", type: "thai"},
+            {org: "ธกส.", type: "thai"},
           ],
         }
       },
     ],
   },
-  hhagri: {
+  households: {
     label: "Households",
     projects: [
       {
         title: "Household Debt",
         layers: {
-          // data: [
-          //   {name: "Monthly NCB data", type: "none"},
-          // ],
           research: [
             {name: "Naoyuki", org: "FSA", type: "intl"},
             {name: "สรา", org: "ฝนง.", type: "bot"},
@@ -273,12 +253,6 @@ const data = {
       {
         title: "Farmer's Debt Solution",
         layers: {
-          // data: [
-          //   {name: "BAAC loan data", type: "none"},
-          //   {name: "PIER farmer survey", type: "none"},
-          //   {name: "LED data", type: "none"},
-          //   {name: "Big agriculture data", type: "none"},
-          // ],
           research: [
             {name: "Chayanee", org: "TU", type: "thai"},
             {name: "Kanittha", org: "CU", type: "thai"},
@@ -309,26 +283,24 @@ const data = {
       },
     ],
   },
-  green: {
+  others: {
     label: "Green Economy, Digital Economy, and Others",
     projects: [
       {
-        title: "PIERspectives",
-        subtitle: "An economist's guide to climate change",
+        title: "Climate Change Synthesis",
         layers: {
           research: [
-            {org: "MPG", type: "bot"},
+            {org: "ฝคศ.", type: "bot"},
           ],
           network: [],
           policy: [],
         }
       },
       {
-        title: "Effects",
-        subtitle: "The macroeconomic effects of climate change in Thailand and implications for central banks",
+        title: "Macroeconomic Effects",
         layers: {
           research: [
-            {name: "พิม", org: "สนง.", type: "bot"},
+            {name: "พิม", org: "ฝนง.", type: "bot"},
           ],
           network: [
             {org: "BIS", type: "intl"},
@@ -337,8 +309,7 @@ const data = {
         },
       },
       {
-        title: "Effects",
-        subtitle: "Climate change and effects on firms and households",
+        title: "Microeconomic Effects",
         layers: {
           research: [
             {name: "จิรสรณ์", org: "RU", type: "thai"},
