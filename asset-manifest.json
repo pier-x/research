@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/research/static/css/main.9b2f40a0.css",
+    "main.css": "/research/static/css/main.0d8374c3.css",
     "main.js": "/research/static/js/main.f465e74c.js",
     "static/js/787.10969b33.chunk.js": "/research/static/js/787.10969b33.chunk.js",
     "static/media/muttayat-bold-webfont.woff2": "/research/static/media/muttayat-bold-webfont.7628b1452a95696794fd.woff2",
@@ -8,12 +8,12 @@
     "static/media/dindanmai-bold-webfont.woff2": "/research/static/media/dindanmai-bold-webfont.faa02e1eb0d0e08d8b2e.woff2",
     "static/media/dindanmai-regular-webfont.woff2": "/research/static/media/dindanmai-regular-webfont.cb16e689d32c3cb83033.woff2",
     "index.html": "/research/index.html",
-    "main.9b2f40a0.css.map": "/research/static/css/main.9b2f40a0.css.map",
+    "main.0d8374c3.css.map": "/research/static/css/main.0d8374c3.css.map",
     "main.f465e74c.js.map": "/research/static/js/main.f465e74c.js.map",
     "787.10969b33.chunk.js.map": "/research/static/js/787.10969b33.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b2f40a0.css",
+    "static/css/main.0d8374c3.css",
     "static/js/main.f465e74c.js"
   ]
 }
