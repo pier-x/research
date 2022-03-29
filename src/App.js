@@ -36,7 +36,11 @@ const data = {
             {name: "ทศพล", org: "ฝนง.", type: "bot"},
             {name: "วีริศ", org: "ฝตง.", type: "bot"},
           ],
-          network: [],
+          network: [
+            {org: "ฝนง.", type: "bot"},
+            {org: "ฝศม.", type: "bot"},
+            {org: "ฝคส.", type: "bot"},
+          ],
           policy: [
             {org: "กนง.", type: "bot"},
           ],
@@ -47,7 +51,12 @@ const data = {
         layers: {
           policy: [
             {org: "กนง.", type: "bot"},
-          ]
+          ],
+          network: [
+            {org: "ฝนง.", type: "bot"},
+            {org: "ฝศม.", type: "bot"},
+            {org: "ฝคส.", type: "bot"},
+          ],
         }
       },
       {
@@ -56,6 +65,9 @@ const data = {
           research: [
             {name: "พิม", org: "ฝนง.", type: "bot"},
             {name: "เจตวัฒน์", org: "ฝนง.", type: "bot"},
+          ],
+          network: [
+            {org: "CMRI", type: "thai"},
           ],
           policy: [
             {org: "กนง.", type: "bot"},
@@ -110,7 +122,7 @@ const data = {
             {org: "ประกันสังคม", type: "thai"},
             {org: "สกสว.", type: "thai"},
             {org: "ฝขอ.", type: "bot"},
-            {org: "สนง.", type: "bot"},
+            {org: "ฝคส.", type: "bot"},
           ],
           policy: [],
         },
@@ -152,22 +164,19 @@ const data = {
           ],
           network: [
             {org: "สสว.", type: "thai"},
+            {org: "วช.", type: "thai"},
+            {org: "สรรพากร", type: "thai"},
           ],
         },
       },
       {
-        title: "Productivity",
-        layers: {
-          research: [
-            {name: "อนุสรา", org: "ฝคศ.", type: "bot"},
-          ],
-        }
-      },
-      {
-        title: "Competition",
+        title: "Productivity & Competition",
         layers: {
           research: [
             {name: "ชานนทร์", org: "Analysis Group", type: "intl"},
+            {name: "สันติธาร", org: "Sea Limited", type: "intl"},
+            {name: "รุ่งเกียรติ", org: "CU", type: "thai"},
+            {name: "อนุสรา", org: "ฝคศ.", type: "bot"},
             {name: "ทศพล", org: "ฝนง.", type: "bot"},
             {name: "ธนพร", org: "ฝคศ.", type: "bot"},
           ],
@@ -200,6 +209,15 @@ const data = {
           ],
         }
       },
+      {
+        title: "Firm Behavior",
+        layers: {
+          research: [
+            {name: "ศิรดา", org: "ฝกง.", type: "bot"},
+            {name: "อารยา", org: "ฝกง.", type: "bot"},
+          ],
+        },
+      },
     ],
   },
   households: {
@@ -227,6 +245,10 @@ const data = {
             {org: "ฝนฉ.", type: "bot"},
             {org: "กยอ.", type: "bot"},
           ],
+          policy: [
+            {org: "คณะที่ปรึกษารองนายกฯ", type: "thai"},
+            {org: "คณะกรรมาธิการการเงินการคลัง", type: "thai"},
+          ],
         },
       },
       {
@@ -242,14 +264,6 @@ const data = {
             {org: "กยอ.", type: "bot"},
           ],
         }
-      },
-      {
-        title: "Lottery",
-        layers: {
-          research: [
-            {name: "Natt", org: "BC's Office of HRC", type: "intl"},
-          ],
-        },
       },
       {
         title: "Farmer's Debt Solution",
@@ -294,13 +308,19 @@ const data = {
             {name: "ปัญจพัฒน์", org: "ฝคศ.", type: "bot"},
             {name: "ธิติ", org: "ฝคศ.", type: "bot"},
           ],
-        }
+          network: [
+            {name: "ฝกส.", type: "bot"},
+          ],
+        },
       },
       {
         title: "Macroeconomic Effects of Climate Change",
         layers: {
           research: [
             {name: "พิม", org: "ฝนง.", type: "bot"},
+          ],
+          network: [
+            {name: "BIS", type: "intl"},
           ],
         },
       },
