@@ -94,7 +94,7 @@ const data = {
             {org: "RIPED", type: "thai"},
           ],
           policy: [
-            {org: "สภาพัฒน์", type: "thai"},
+            {org: "สภาพัฒนฯ", type: "thai"},
           ],
         }
       },
@@ -150,7 +150,7 @@ const data = {
             {name: "อธิภัทร", org: "CU", type: "thai"},
             {org: "LINE MAN Wongnai", type: "thai"},
           ],
-          policy: [
+          network: [
             {org: "สสว.", type: "thai"},
           ],
         },
@@ -171,6 +171,9 @@ const data = {
             {name: "ทศพล", org: "ฝนง.", type: "bot"},
             {name: "ธนพร", org: "ฝคศ.", type: "bot"},
           ],
+          network: [
+            {org: "กขค.", type: "thai"},
+          ]
         },
       },
       {
@@ -275,7 +278,7 @@ const data = {
             {org: "ทีมวิจัยภายใต้โครงการแก้ปัญหาความยากจนอย่างเบ็ดเสร็จและแม่นยำ", type: "thai"},
           ],
           network: [
-            {org: "บพท.", type: "bot"},
+            {org: "บพท.", type: "thai"},
           ],
         },
       },
