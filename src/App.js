@@ -309,7 +309,7 @@ const data = {
             {name: "ธิติ", org: "ฝคศ.", type: "bot"},
           ],
           network: [
-            {name: "ฝกส.", type: "bot"},
+            {org: "ฝกส.", type: "bot"},
           ],
         },
       },
@@ -320,7 +320,7 @@ const data = {
             {name: "พิม", org: "ฝนง.", type: "bot"},
           ],
           network: [
-            {name: "BIS", type: "intl"},
+            {org: "BIS", type: "intl"},
           ],
         },
       },
