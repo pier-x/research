@@ -3,6 +3,7 @@ $green-color: rgb(53, 147, 159);
 $secondary-color: #dd8357;
 
 $cell-width: 250px;
+$heading-width: 180px;
 $cell-padding: 20px;
 
 @font-face {
@@ -70,7 +71,7 @@ a {
   margin: 0 auto;
   display: grid;
   grid-template-rows: repeat(3, 1fr) auto;
-  grid-template-columns: 180px repeat(auto-fit, $cell-width + 2*$cell-padding);
+  grid-template-columns: $heading-width repeat(auto-fit, $cell-width + 2*$cell-padding);
   // gap: 0 40px;
   grid-auto-flow: column;
   > div {
@@ -125,7 +126,7 @@ a {
 }
 
 .layer-heading {
-  width: 180px;
+  width: $heading-width;
   font-size: 1.8rem;
   line-height: 1.1;
   font-weight: bold;
@@ -160,6 +161,7 @@ a {
 }
 
 .item {
+  font-size: 1.05rem;
   box-sizing: border-box;
   border-radius: 15px;
   padding: 2px 10px;

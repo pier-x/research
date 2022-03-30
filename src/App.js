@@ -10,9 +10,9 @@ import styles from './css/styles.scss';
 import './css/styles.scss';
 
 const layersDef = {
-  research: "Research Collaboration",
+  research: "Core Knowledge",
   network: "Network & Policy Engagement",
-  policy: "Policy Advocacy",
+  policy: "Policy Input /Advocacy"
 }
 const numLayers = Object.keys(layersDef).length
 const minViolinWidth = 2
@@ -90,7 +90,7 @@ const data = {
     ],
   },
   labor: {
-    label: "Labor Market and Human Capital",
+    label: "Labor Market & Human Capital",
     projects: [
       {
         title: "Education",
@@ -138,13 +138,13 @@ const data = {
           network: [
             {org: "ILO", type: "intl"},
             {org: "World Bank", type: "intl"},
-            {org: "สภาพัฒน์", type: "thai"},
             {org: "สศค.", type: "thai"},
             {org: "ฝขอ.", type: "bot"},
           ],
           policy: [
             {org: "อนุฯ เบี้ยยังชีพผู้สูงอายุ", type: "thai"},
             {org: "คณะกรรมการกฤษฎีกา", type: "thai"},
+            {org: "สภาพัฒนฯ", type: "thai"},
             {org: "Op-Ed", type: "bot"},
           ],
         },
